@@ -33,10 +33,10 @@ jobs:
   jobs:
     needs: build-and-test
     runs-on: ubuntu-latest
-      steps:
-        - name: Run Snyk to check for vulnerabilities
-          uses: snyk/actions/maven@master
-          env:
-            SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
-          with:
-            args: --severity-threshold=high
+    steps:
+      - name: Run Snyk to check for vulnerabilities
+        uses: snyk/actions/maven@master
+        env:
+          SNYK_TOKEN: ${{ secrets.SNYK_TOKEN }}
+        with:
+          args: --severity-threshold=high
